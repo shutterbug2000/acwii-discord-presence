@@ -1,6 +1,6 @@
 // CHANGE THESE
-const playerID = ""; //PID from https://wiimmfi.de/game/acrossingwii/
-const discordID = ""; //Discord application ID
+const friendCode = "2454-1334-2181"; //Friend code
+const discordID = "460225978233389086"; //Discord application ID
 
 // MAYBE CHANGE THIS
 const updateTime = 20; // in seconds
@@ -20,8 +20,6 @@ var startTimestamp = 0;
 		
 var currentMode = -1;
 
-var friendCode = "";
-
 let getData = () => {
 	request(url, (err, data) => {
 		
@@ -35,8 +33,7 @@ let getData = () => {
 		for (var i = 1; i <= numberOfPlayers; i++) {
 			var currentLine = lines[i].split("|");
 			//console.log(currentLine[2])
-			if(currentLine[2] == playerID){
-				friendCode = currentLine[3];
+			if(currentLine[3] == friendCode){
 				host = currentLine[4];
 				connected = true;
 			}
